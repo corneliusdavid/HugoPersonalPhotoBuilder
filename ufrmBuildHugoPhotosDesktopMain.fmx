@@ -1,0 +1,281 @@
+object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
+  Left = 0
+  Top = 0
+  Caption = 'Build Hugo Photo Album'
+  ClientHeight = 600
+  ClientWidth = 576
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TabControl: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 576.000000000000000000
+    Size.Height = 544.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      576s
+      544s
+      576s
+      544s)
+    object tabParams: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #1'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object edtTitle: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Position.X = 32.000000000000000000
+        Position.Y = 49.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        object lblTitle: TLabel
+          Position.Y = -19.000000000000000000
+          Text = 'Title:'
+          TabOrder = 0
+        end
+      end
+      object edtLocations: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 32.000000000000000000
+        Position.Y = 180.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        object lblLocations: TLabel
+          Position.Y = -19.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Location (e.g. "oregon - portland"):'
+          TabOrder = 0
+        end
+      end
+      object edtDesc: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 32.000000000000000000
+        Position.Y = 98.000000000000000000
+        Size.Width = 529.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Viewport.Width = 525.000000000000000000
+        Viewport.Height = 46.000000000000000000
+      end
+      object edtTopic: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 32.000000000000000000
+        Position.Y = 260.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        CharCase = ecLowerCase
+        object lblTopic: TLabel
+          Position.Y = -45.000000000000000000
+          Size.Width = 265.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Topic (e.g. "tulip-fields-2006"):'
+          TabOrder = 0
+        end
+        object cmbTopicPrefix: TComboBox
+          Items.Strings = (
+            'family_events'
+            'parks'
+            'beach'
+            'sight_seeing'
+            'hikes'
+            'camping'
+            'other_events'
+            'pets'
+            'misc')
+          ItemIndex = 3
+          Position.Y = -26.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+        end
+        object lblTopicHelp: TLabel
+          StyledSettings = [Family, Size, Style]
+          Position.Y = 24.000000000000000000
+          Size.Width = 473.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claGray
+          Text = 
+            'Web folder name for the pictures; use dashes, no spaces or punct' +
+            'uation'
+          TabOrder = 2
+        end
+      end
+      object lblDesc: TLabel
+        Position.X = 32.000000000000000000
+        Position.Y = 79.000000000000000000
+        Text = 'Description:'
+        TabOrder = 7
+      end
+      object edtSrc: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 3
+        Position.X = 32.000000000000000000
+        Position.Y = 332.000000000000000000
+        Size.Width = 529.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        object lblSourceFolder: TLabel
+          Position.Y = -19.000000000000000000
+          Size.Width = 255.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Source (full drive and path of existing images):'
+          TabOrder = 0
+        end
+      end
+      object edtThumb: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 32.000000000000000000
+        Position.Y = 384.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        object lblThumb: TLabel
+          Position.Y = -19.000000000000000000
+          Size.Width = 265.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Album Thumbnail (filename only):'
+          TabOrder = 0
+        end
+      end
+      object edtTags: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 32.000000000000000000
+        Position.Y = 432.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        object lblTags: TLabel
+          Position.Y = -19.000000000000000000
+          Size.Width = 313.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Tags (e.g. birthdays, reunions, weddings, lakes) :'
+          TabOrder = 0
+        end
+        object lblTagHelp: TLabel
+          StyledSettings = [Family, Size, Style]
+          Position.Y = 25.000000000000000000
+          Size.Width = 473.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claGray
+          Text = 'comma-separated tags for photos in this folder'
+          TabOrder = 2
+        end
+      end
+      object btnBuildPage: TButton
+        Action = actBuildAlbumPage
+        Enabled = True
+        ImageIndex = -1
+        Position.X = 32.000000000000000000
+        Position.Y = 482.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 39.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+      end
+    end
+    object tabLog: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object lbLog: TListBox
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Position.X = 15.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 546.000000000000000000
+        Size.Height = 473.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 542.000000000000000000
+        Viewport.Height = 469.000000000000000000
+      end
+      object btnLogDone: TButton
+        Action = actPreviousTab
+        Enabled = True
+        ImageIndex = -1
+        Position.X = 15.000000000000000000
+        Position.Y = 569.000000000000000000
+        Size.Width = 90.000000000000000000
+        Size.Height = 31.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+  end
+  object BottomToolBar: TToolBar
+    Align = Bottom
+    Anchors = [akLeft]
+    Position.Y = 544.000000000000000000
+    Size.Width = 576.000000000000000000
+    Size.Height = 56.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 1
+  end
+  object ActionList1: TActionList
+    Left = 496
+    Top = 64
+    object actPreviousTab: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl
+      ShortCut = 137
+    end
+    object actNextTab: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl
+    end
+    object actBuildAlbumPage: TAction
+      Text = 'Build Album Page'
+      OnExecute = actBuildAlbumPageExecute
+    end
+  end
+end

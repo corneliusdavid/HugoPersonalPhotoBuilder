@@ -1,0 +1,63 @@
+inherited frmBuildHugoPhotosDesktopMain_LgXhdpiPh: TfrmBuildHugoPhotosDesktopMain_LgXhdpiPh
+  ClientHeight = 696
+  ClientWidth = 452
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 0
+  inherited TabControl: TTabControl
+    Size.Width = 452.000000000000000000
+    Size.Height = 640.000000000000000000
+    Sizes = (
+      452s
+      640s
+      452s
+      640s)
+    inherited TabItem1: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited edtTitle: TEdit
+        inherited lblTitle: TLabel
+          Position.X = 32.000000000000000000
+        end
+      end
+      inherited edtDesc: TMemo
+        Size.Width = 385.000000000000000000
+        Viewport.Width = 385.000000000000000000
+        Viewport.Height = 50.000000000000000000
+      end
+      inherited edtTopic: TEdit
+        inherited cmbTopicPrefix: TComboBox
+          Position.X = 32.000000000000000000
+        end
+        inherited lblTopicHelp: TLabel
+          Position.X = 32.000000000000000000
+        end
+      end
+      inherited edtSrc: TEdit
+        Size.Width = 385.000000000000000000
+      end
+      inherited edtDest: TEdit
+        Anchors = [akLeft, akTop, akRight]
+        Size.Width = 385.000000000000000000
+      end
+      inherited edtThumb: TEdit
+        Anchors = [akLeft, akTop, akRight]
+        Size.Width = 385.000000000000000000
+      end
+      inherited edtTags: TEdit
+        Anchors = [akLeft, akTop, akRight]
+        Size.Width = 385.000000000000000000
+        inherited lblTagHelp: TLabel
+          Position.X = 32.000000000000000000
+        end
+      end
+    end
+    inherited TabItem2: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+    end
+  end
+  inherited BottomToolBar: TToolBar
+    Position.Y = 640.000000000000000000
+    Size.Width = 452.000000000000000000
+  end
+end
