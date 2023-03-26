@@ -38,9 +38,11 @@ type
     btnLogDone: TButton;
     btnBuildPage: TButton;
     actBuildAlbumPage: TAction;
+    actBackToMain: TAction;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure actBuildAlbumPageExecute(Sender: TObject);
+    procedure actBackToMainExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,6 +59,19 @@ implementation
 uses
   uAlbumInfo,
   uBuildAlbumPage;
+
+procedure TfrmBuildHugoPhotosDesktopMain.actBackToMainExecute(Sender: TObject);
+begin
+  actPreviousTab.Execute;
+
+  edtTitle.Text := EmptyStr;
+  edtDesc.Text  := EmptyStr;
+  edtLocations.Text := EmptyStr;
+  edtThumb.Text := EmptyStr;
+  edtTags.Text  := EmptyStr;
+  edtSrc.Text   := EmptyStr;
+  edtTitle.SetFocus;
+end;
 
 procedure TfrmBuildHugoPhotosDesktopMain.actBuildAlbumPageExecute(Sender: TObject);
 var

@@ -2,8 +2,8 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
   Left = 0
   Top = 0
   Caption = 'Build Hugo Photo Album'
-  ClientHeight = 600
-  ClientWidth = 576
+  ClientHeight = 640
+  ClientWidth = 496
   FormFactor.Width = 1440
   FormFactor.Height = 900
   FormFactor.Devices = [Desktop]
@@ -12,18 +12,18 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
   object TabControl: TTabControl
     Align = Client
     FullSize = True
-    Size.Width = 576.000000000000000000
-    Size.Height = 544.000000000000000000
+    Size.Width = 496.000000000000000000
+    Size.Height = 584.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
     TabIndex = 0
     TabOrder = 0
     TabPosition = None
     Sizes = (
-      576s
-      544s
-      576s
-      544s)
+      496s
+      584s
+      496s
+      584s)
     object tabParams: TTabItem
       CustomIcon = <
         item
@@ -39,7 +39,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
       ExplicitSize.cy = 8.000000000000000000
       object edtTitle: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 5
+        TabOrder = 0
         Position.X = 32.000000000000000000
         Position.Y = 49.000000000000000000
         Size.Width = 345.000000000000000000
@@ -53,7 +53,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
       end
       object edtLocations: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 4
+        TabOrder = 3
         Position.X = 32.000000000000000000
         Position.Y = 180.000000000000000000
         Size.Width = 345.000000000000000000
@@ -75,16 +75,16 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
         Anchors = [akLeft, akTop, akRight]
         Position.X = 32.000000000000000000
         Position.Y = 98.000000000000000000
-        Size.Width = 529.000000000000000000
+        Size.Width = 449.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 6
-        Viewport.Width = 525.000000000000000000
+        TabOrder = 2
+        Viewport.Width = 445.000000000000000000
         Viewport.Height = 46.000000000000000000
       end
       object edtTopic: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 0
+        TabOrder = 4
         Position.X = 32.000000000000000000
         Position.Y = 260.000000000000000000
         Size.Width = 345.000000000000000000
@@ -134,15 +134,15 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
         Position.X = 32.000000000000000000
         Position.Y = 79.000000000000000000
         Text = 'Description:'
-        TabOrder = 7
+        TabOrder = 1
       end
       object edtSrc: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Anchors = [akLeft, akTop, akRight]
-        TabOrder = 3
+        TabOrder = 5
         Position.X = 32.000000000000000000
         Position.Y = 332.000000000000000000
-        Size.Width = 529.000000000000000000
+        Size.Width = 449.000000000000000000
         Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
         object lblSourceFolder: TLabel
@@ -156,7 +156,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
       end
       object edtThumb: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 1
+        TabOrder = 6
         Position.X = 32.000000000000000000
         Position.Y = 384.000000000000000000
         Size.Width = 345.000000000000000000
@@ -173,7 +173,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
       end
       object edtTags: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 2
+        TabOrder = 7
         Position.X = 32.000000000000000000
         Position.Y = 432.000000000000000000
         Size.Width = 345.000000000000000000
@@ -227,23 +227,24 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
         Anchors = [akLeft, akTop, akRight, akBottom]
         Position.X = 15.000000000000000000
         Position.Y = 24.000000000000000000
-        Size.Width = 546.000000000000000000
-        Size.Height = 473.000000000000000000
+        Size.Width = 466.000000000000000000
+        Size.Height = 513.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         DisableFocusEffect = True
         DefaultItemStyles.ItemStyle = ''
         DefaultItemStyles.GroupHeaderStyle = ''
         DefaultItemStyles.GroupFooterStyle = ''
-        Viewport.Width = 542.000000000000000000
-        Viewport.Height = 469.000000000000000000
+        Viewport.Width = 462.000000000000000000
+        Viewport.Height = 509.000000000000000000
       end
       object btnLogDone: TButton
-        Action = actPreviousTab
+        Action = actBackToMain
+        Anchors = [akLeft, akBottom]
         Enabled = True
         ImageIndex = -1
         Position.X = 15.000000000000000000
-        Position.Y = 569.000000000000000000
+        Position.Y = 545.000000000000000000
         Size.Width = 90.000000000000000000
         Size.Height = 31.000000000000000000
         Size.PlatformDefault = False
@@ -254,16 +255,16 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
   object BottomToolBar: TToolBar
     Align = Bottom
     Anchors = [akLeft]
-    Position.Y = 544.000000000000000000
-    Size.Width = 576.000000000000000000
+    Position.Y = 584.000000000000000000
+    Size.Width = 496.000000000000000000
     Size.Height = 56.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'bottomtoolbar'
     TabOrder = 1
   end
   object ActionList1: TActionList
-    Left = 496
-    Top = 64
+    Left = 192
+    Top = 488
     object actPreviousTab: TPreviousTabAction
       Category = 'Tab'
       TabControl = TabControl
@@ -276,6 +277,10 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
     object actBuildAlbumPage: TAction
       Text = 'Build Album Page'
       OnExecute = actBuildAlbumPageExecute
+    end
+    object actBackToMain: TAction
+      Text = 'Back'
+      OnExecute = actBackToMainExecute
     end
   end
 end
