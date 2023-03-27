@@ -67,6 +67,7 @@ begin
   edtTitle.Text := EmptyStr;
   edtDesc.Text  := EmptyStr;
   edtLocations.Text := EmptyStr;
+  edtTopic.Text := EmptyStr;
   edtThumb.Text := EmptyStr;
   edtTags.Text  := EmptyStr;
   edtSrc.Text   := EmptyStr;

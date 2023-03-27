@@ -53,7 +53,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
       end
       object edtLocations: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 3
+        TabOrder = 2
         Position.X = 32.000000000000000000
         Position.Y = 180.000000000000000000
         Size.Width = 345.000000000000000000
@@ -78,7 +78,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
         Size.Width = 449.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 2
+        TabOrder = 1
         Viewport.Width = 445.000000000000000000
         Viewport.Height = 46.000000000000000000
       end
@@ -100,6 +100,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
           TabOrder = 0
         end
         object cmbTopicPrefix: TComboBox
+          DropDownCount = 12
           Items.Strings = (
             'family_events'
             'parks'
@@ -115,7 +116,7 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
           Size.Width = 120.000000000000000000
           Size.Height = 22.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
+          TabOrder = 3
         end
         object lblTopicHelp: TLabel
           StyledSettings = [Family, Size, Style]
@@ -127,14 +128,14 @@ object frmBuildHugoPhotosDesktopMain: TfrmBuildHugoPhotosDesktopMain
           Text = 
             'Web folder name for the pictures; use dashes, no spaces or punct' +
             'uation'
-          TabOrder = 2
+          TabOrder = 1
         end
       end
       object lblDesc: TLabel
         Position.X = 32.000000000000000000
         Position.Y = 79.000000000000000000
         Text = 'Description:'
-        TabOrder = 1
+        TabOrder = 3
       end
       object edtSrc: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
