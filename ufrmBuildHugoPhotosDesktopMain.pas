@@ -10,7 +10,7 @@ uses
 
 type
   TfrmBuildHugoPhotosDesktopMain = class(TForm)
-    ActionList1: TActionList;
+    aclAlbumBuilder: TActionList;
     actPreviousTab: TPreviousTabAction;
     actNextTab: TNextTabAction;
     TabControl: TTabControl;
@@ -39,12 +39,14 @@ type
     btnBuildPage: TButton;
     actBuildAlbumPage: TAction;
     actBackToMain: TAction;
+    StyleBook: TStyleBook;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure actBuildAlbumPageExecute(Sender: TObject);
     procedure actBackToMainExecute(Sender: TObject);
   private
-    { Private declarations }
+    function AllFieldsFilled: Boolean;
+    function SourceFolderExists: Boolean;
   public
     { Public declarations }
   end;
@@ -57,6 +59,7 @@ implementation
 {$R *.fmx}
 
 uses
+  IOUtils,
   uAlbumInfo,
   uBuildAlbumPage;
 
@@ -78,20 +81,45 @@ procedure TfrmBuildHugoPhotosDesktopMain.actBuildAlbumPageExecute(Sender: TObjec
 var
   NewAlbum: TAlbumInfo;
 begin
-  actNextTab.Execute;
+  if AllFieldsFilled and SourceFolderExists then begin
+    actNextTab.Execute;
 
-  NewAlbum.Title     := edtTitle.Text;
-  NewAlbum.Desc      := edtDesc.Text;
-  NewAlbum.Locations := edtLocations.Text;
-  NewAlbum.Topic     := cmbTopicPrefix.Items[cmbTopicPrefix.ItemIndex] + '\' + edtTopic.Text;
-  NewAlbum.Thumb     := edtThumb.Text;
-  NewAlbum.Tags      := edtTags.Text;
-  NewAlbum.Src       := edtSrc.Text;
+    NewAlbum.Title     := edtTitle.Text;
+    NewAlbum.Desc      := edtDesc.Text;
+    NewAlbum.Locations := edtLocations.Text;
+    NewAlbum.Topic     := cmbTopicPrefix.Items[cmbTopicPrefix.ItemIndex] + '\' + edtTopic.Text;
+    NewAlbum.Thumb     := edtThumb.Text;
+    NewAlbum.Tags      := edtTags.Text;
+    NewAlbum.Src       := edtSrc.Text;
 
-  BuildAlbumPage(NewAlbum, procedure (const s: string)
-                 begin
-                   lbLog.Items.Add(s);
-                 end);
+    BuildAlbumPage(NewAlbum, procedure (const s: string)
+                   begin
+                     lbLog.Items.Add(s);
+                   end);
+  end;
+end;
+
+function TfrmBuildHugoPhotosDesktopMain.AllFieldsFilled: Boolean;
+begin
+  Result := False;
+
+  if edtTitle.Text.IsEmpty then begin
+    edtTitle.SetFocus;
+    ShowMessage('"Title" is required.');
+  end else if edtLocations.Text.IsEmpty then begin
+    edtLocations.SetFocus;
+    ShowMessage('At least one "Location" is required.');
+  end else if edtTopic.Text.IsEmpty then begin
+    edtTopic.SetFocus;
+    ShowMessage('Enter the "Web Folder" for the new sub-album.');
+  end else if edtSrc.Text.IsEmpty then begin
+    edtSrc.SetFocus;
+    ShowMessage('Paste the "Source Folder" of the picture files.');
+  end else if edtThumb.Text.IsEmpty then begin
+    edtThumb.SetFocus;
+    ShowMessage('List the filename of the "Thumbnail" for this new sub-album.');
+  end else
+    Result := True;
 end;
 
 procedure TfrmBuildHugoPhotosDesktopMain.FormCreate(Sender: TObject);
@@ -106,6 +134,16 @@ begin
   begin
     TabControl.First;
     Key := 0;
+  end;
+end;
+
+function TfrmBuildHugoPhotosDesktopMain.SourceFolderExists: Boolean;
+begin
+  Result := TDirectory.Exists(edtSrc.Text);
+
+  if not Result then begin
+    edtSrc.SetFocus;
+    ShowMessage('Please enter a valid "Source Folder" where the pictures currently reside.');
   end;
 end;
 

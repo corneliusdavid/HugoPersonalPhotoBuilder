@@ -68,7 +68,8 @@ begin
                         begin
                           Result := (SearchRec.Attr and faDirectory = 0) and
                                     (SameText(ExtractFileExt(SearchRec.Name), '.jpg') or
-                                     SameText(ExtractFileExt(SearchRec.Name), '.jpeg'));
+                                     SameText(ExtractFileExt(SearchRec.Name), '.jpeg') or
+                                     SameText(ExtractFileExt(SearchRec.Name), '.png'));
 
                         end);
 
